@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 把信息存储到localStorage中，key=>value形式
+        // localStorage.setItem('name','张三丰')
+        // localStorage.setItem('password','123456')
+        // localStorage.setItem('myclass','kw33')
+
+          // 通过key读取localStorage中的信息
+        // console.log(localStorage.getItem('name'));
+        // console.log(localStorage.getItem('myclass'));
+
+        // 通过key移除localStorage中的信息
+        // localStorage.removeItem('password')
+        // localStorage.clear(); // 全部清除
+
+        // 要求把下面信息存储到localStorage中,
+        var mydata = {code: 200, data:[{name:'a',pass:'1'},{name:'b',pass:'2'},{name:'c',pass:'3'}]}
+        // 把localStorage中mydata读取出来，并且遍历输出用户名和密码
+        // 用户名：'a', 密码： '1'
+        // 用户名：'b', 密码： '2'
+        // 用户名：'c', 密码： '3'
+
+        localStorage.setItem('mydata',JSON.stringify(mydata)) 
+        console.log();
+        JSON.parse(localStorage.getItem('mydata')).data.forEach(item => {
+            console.log(`用户名：${item.name}, 密码： ${item.pass}`);
+        })
+
+
+
+    </script>
+</body>
+
+</html>
